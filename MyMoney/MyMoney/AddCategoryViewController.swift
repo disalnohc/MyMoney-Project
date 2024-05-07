@@ -87,12 +87,35 @@ extension AddCategoryViewController {
             return
         }
         
-        let image = UIImage(named: "package")
-                    
+        guard let imageData = UIImage(named: "package")?.jpegData(compressionQuality: 0.8) else {
+            // Handle error if unable to convert image to data
+            return
+        }
+
+        // Boundary
+        let boundary = UUID().uuidString
+
+        // Header for image data
+        var imageDataPart = Data()
+        imageDataPart.append("--\(boundary)\r\n")
+        imageDataPart.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpeg\"\r\n")
+        imageDataPart.append("Content-Type: image/jpeg\r\n\r\n")
+        imageDataPart.append(imageData)
+        imageDataPart.append("\r\n")
+
+        // Footer boundary
+        let footer = "--\(boundary)--\r\n"
+
+        // Combine all parts
+        var requestData = Data()
+        requestData.append(imageDataPart)
+        requestData.append(footer)
+
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
-        request.httpBody = image?.jpegData(compressionQuality: 1)
-        request.setValue("multipart/form-data; boundary=\(UUID().uuidString)", forHTTPHeaderField: "Content-Type")
+        request.httpBody = requestData
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
         
         let task = URLSession.shared.dataTask(with: request) { data , error , response in
             if let error = error {
@@ -137,3 +160,10 @@ extension AddCategoryViewController : UIImagePickerControllerDelegate , UINaviga
     }
 }
 
+extension Data {
+   mutating func append(_ string: String) {
+      if let data = string.data(using: .utf8) {
+         append(data)
+      }
+   }
+}
