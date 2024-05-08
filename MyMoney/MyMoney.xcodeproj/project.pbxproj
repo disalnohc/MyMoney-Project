@@ -12,6 +12,7 @@
 		3F6BB3C72BE3859C00F33522 /* RegularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3C62BE3859C00F33522 /* RegularCollectionViewCell.swift */; };
 		3F6BB3CD2BE4E76D00F33522 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */; };
 		3F6BB3CF2BE4E86800F33522 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */; };
+		3F6BB3D12BEB0E8300F33522 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3D02BEB0E8300F33522 /* Extension.swift */; };
 		3F70EBE72BC8C51F00A0DD79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */; };
 		3F70EBE92BC8C51F00A0DD79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */; };
 		3F70EBEB2BC8C51F00A0DD79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBEA2BC8C51F00A0DD79 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		3F6BB3C62BE3859C00F33522 /* RegularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3F6BB3D02BEB0E8300F33522 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		3F70EBE32BC8C51F00A0DD79 /* MyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */,
 				3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */,
 				3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */,
+				3F6BB3D02BEB0E8300F33522 /* Extension.swift */,
 			);
 			path = MyMoney;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				3F0D5CEB2BE323C00016B24A /* RegularSubscribeViewController.swift in Sources */,
 				3F70EBE92BC8C51F00A0DD79 /* SceneDelegate.swift in Sources */,
 				3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */,
+				3F6BB3D12BEB0E8300F33522 /* Extension.swift in Sources */,
 				3F70EBFD2BC90D9700A0DD79 /* RegisterViewController.swift in Sources */,
 				3F8B7BFB2BD2446300432EEA /* DataModel.swift in Sources */,
 				3F6BB3C42BE3747500F33522 /* AddRegularSubscribeViewController.swift in Sources */,

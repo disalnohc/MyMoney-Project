@@ -7,21 +7,73 @@
 
 import UIKit
 
-class AddCategoryViewController: UIViewController {
+class AddCategoryViewController: UIViewController, UIPickerViewDataSource , UIPickerViewDelegate {
     
     @IBOutlet weak var bgImage: UIView!
     @IBOutlet weak var imageCategory: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var typeButton: UIButton!
-    @IBOutlet weak var colorWheel: UIColorWell!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var colorWells: UIColorWell!
     @IBOutlet weak var uploadImaguttone: UIButton!
+    @IBOutlet weak var bgDetails: UIView!
+    
+    var selectedColor: UIColor = .white
+    var hexColor : String = ""
+    let data = ["Income", "Expenses"]
+    var selectedOption : String = "Income"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        bgImage.layer.cornerRadius = 10
+        bgDetails.layer.cornerRadius = 10
         tappedImages()
+        
+        //color
+        colorWells.addTarget(self, action: #selector(colorChanged), for: .valueChanged)
+        
+        let picker = UIPickerView()
+            picker.dataSource = self
+            picker.delegate = self
+        
+        typeTextField.inputView = picker
+        typeTextField.text = selectedOption
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPickerView))
+            view.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - UIPickerViewDelegate and UIPickerViewDataSource methods
+    
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return data.count
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return data[row]
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            selectedOption = data[row]
+            typeTextField.text = selectedOption
+        }
+    
+    @objc func dismissPickerView() {
+        // Dismiss the inputView (UIPickerView) of typeTextField
+        typeTextField.resignFirstResponder()
+    }
+    
+    // MARK: COLORWELL AND COLOR CHANGED
+    @objc private func colorChanged() {
+                bgImage.backgroundColor = colorWells.selectedColor
+                guard let hexValue = colorWells.selectedColor?.toHex else { return }
+                hexColor = hexValue
     }
     
     class func initVC() -> AddCategoryViewController {
@@ -43,8 +95,7 @@ class AddCategoryViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIButton) {
-//        addNewCategory()
-        updateImage()
+        addNewCategory()
     }
     
 }
@@ -57,10 +108,10 @@ extension AddCategoryViewController {
         }
         
         let categoryData = CategoryData(
-            username: "toeibew00",
-            name: "dad",
-            bgcolor: ".green",
-            type: "income",
+            username: "\(userName)",
+            name: nameTextField.text ?? "",
+            bgcolor: hexColor,
+            type: selectedOption.lowercased(),
             image: nil)
         
         let postData = try! JSONEncoder().encode(categoryData);
@@ -70,12 +121,19 @@ extension AddCategoryViewController {
         request.httpBody = postData
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let task = URLSession.shared.dataTask(with: request) { data , error , response in
-            let statusCode = (response as! HTTPURLResponse).statusCode
-            if statusCode == 200 {
-                print("SUCCESS")
-            } else {
-                print(statusCode)
+        let task = URLSession.shared.dataTask(with: request) { data , response , error in
+            if let error = error {
+                print("Error : \(error)")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                if response.statusCode == 200 {
+                    DispatchQueue.main.async {
+                        self.updateImage()
+                    }
+                } else {
+                    print("Response is not 200 : \(response.statusCode)")
+                }
             }
         }
         task.resume()
@@ -87,8 +145,8 @@ extension AddCategoryViewController {
             return
         }
         
-        guard let imageData = UIImage(named: "package")?.jpegData(compressionQuality: 0.8) else {
-            // Handle error if unable to convert image to data
+        guard let imageData = imageCategory.image?.jpegData(compressionQuality: 0.8) else {
+            let imageData = UIImage(named: "package")?.jpegData(compressionQuality: 0.8)
             return
         }
 
@@ -117,10 +175,11 @@ extension AddCategoryViewController {
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
         
-        let task = URLSession.shared.dataTask(with: request) { data , error , response in
+        let task = URLSession.shared.dataTask(with: request) { data , response , error in
             if let error = error {
                 print("error : \(error)")
             }
+            
             if let statusCode = response as? HTTPURLResponse {
                 if statusCode.statusCode == 200 {
                     print("Success")
@@ -146,8 +205,10 @@ extension AddCategoryViewController {
         }
     
     func tappedImages() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imagePicker))
+        UITapGestureRecognizer(target: self, action: #selector(imagePicker))
     }
+    
+    
     
 }
 
@@ -158,12 +219,4 @@ extension AddCategoryViewController : UIImagePickerControllerDelegate , UINaviga
         imageCategory.contentMode = .scaleAspectFill
         dismiss(animated: true, completion: nil)
     }
-}
-
-extension Data {
-   mutating func append(_ string: String) {
-      if let data = string.data(using: .utf8) {
-         append(data)
-      }
-   }
 }
