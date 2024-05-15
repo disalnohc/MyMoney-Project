@@ -13,9 +13,10 @@
 		3F6BB3CD2BE4E76D00F33522 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */; };
 		3F6BB3CF2BE4E86800F33522 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */; };
 		3F6BB3D12BEB0E8300F33522 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3D02BEB0E8300F33522 /* Extension.swift */; };
+		3F6BB3DE2BF338DE00F33522 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3DD2BF338DE00F33522 /* CalendarViewController.swift */; };
 		3F70EBE72BC8C51F00A0DD79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */; };
 		3F70EBE92BC8C51F00A0DD79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */; };
-		3F70EBEB2BC8C51F00A0DD79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBEA2BC8C51F00A0DD79 /* ViewController.swift */; };
+		3F70EBEB2BC8C51F00A0DD79 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBEA2BC8C51F00A0DD79 /* LoginViewController.swift */; };
 		3F70EBEE2BC8C51F00A0DD79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F70EBEC2BC8C51F00A0DD79 /* Main.storyboard */; };
 		3F70EBF02BC8C52000A0DD79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F70EBEF2BC8C52000A0DD79 /* Assets.xcassets */; };
 		3F70EBF32BC8C52000A0DD79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F70EBF12BC8C52000A0DD79 /* LaunchScreen.storyboard */; };
@@ -29,19 +30,22 @@
 		3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */; };
 		3F8B7C002BD7891300432EEA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */; };
 		3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */; };
+		A680363514A26A53FA234E89 /* Pods_MyMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B05F52F67E8D0F4C37170D7 /* Pods-MyMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoney.release.xcconfig"; path = "Target Support Files/Pods-MyMoney/Pods-MyMoney.release.xcconfig"; sourceTree = "<group>"; };
 		3F0D5CEA2BE323C00016B24A /* RegularSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularSubscribeViewController.swift; sourceTree = "<group>"; };
 		3F6BB3C32BE3747500F33522 /* AddRegularSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularSubscribeViewController.swift; sourceTree = "<group>"; };
 		3F6BB3C62BE3859C00F33522 /* RegularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F6BB3D02BEB0E8300F33522 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3F6BB3DD2BF338DE00F33522 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		3F70EBE32BC8C51F00A0DD79 /* MyMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F70EBEA2BC8C51F00A0DD79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F70EBEA2BC8C51F00A0DD79 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F70EBED2BC8C51F00A0DD79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F70EBEF2BC8C52000A0DD79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F70EBF22BC8C52000A0DD79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCategoryCell.swift; sourceTree = "<group>"; };
 		3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		655C3322345DC3EE621E1F62 /* Pods-MyMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoney.debug.xcconfig"; path = "Target Support Files/Pods-MyMoney/Pods-MyMoney.debug.xcconfig"; sourceTree = "<group>"; };
+		9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,34 +69,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A680363514A26A53FA234E89 /* Pods_MyMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083D0DB386925B15E182AEC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F0D5CEE2BE329B40016B24A /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				3F70EBFF2BCF5A2900A0DD79 /* MainViewController.swift */,
 				3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */,
 				3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */,
-			);
-			path = MainView;
-			sourceTree = "<group>";
-		};
-		3F0D5CEF2BE329FF0016B24A /* NavigationView */ = {
-			isa = PBXGroup;
-			children = (
+				3F6BB3D22BEB5E4500F33522 /* History */,
+				3F6BB3C52BE3747E00F33522 /* Regular */,
+				3F78F7192BF49DB400DC57B5 /* Category */,
+				3F78F7182BF49D9D00DC57B5 /* Calendar */,
 				3F0D5CF12BE32A5B0016B24A /* AddStatementView */,
 			);
-			path = NavigationView;
+			path = MainView;
 			sourceTree = "<group>";
 		};
 		3F0D5CF02BE32A1C0016B24A /* Login&Regis */ = {
 			isa = PBXGroup;
 			children = (
-				3F70EBEA2BC8C51F00A0DD79 /* ViewController.swift */,
+				3F70EBEA2BC8C51F00A0DD79 /* LoginViewController.swift */,
 				3F70EBFC2BC90D9700A0DD79 /* RegisterViewController.swift */,
 			);
 			path = "Login&Regis";
@@ -131,11 +143,22 @@
 			path = AddRegular;
 			sourceTree = "<group>";
 		};
+		3F6BB3D22BEB5E4500F33522 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */,
+				3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		3F70EBDA2BC8C51F00A0DD79 = {
 			isa = PBXGroup;
 			children = (
 				3F70EBE52BC8C51F00A0DD79 /* MyMoney */,
 				3F70EBE42BC8C51F00A0DD79 /* Products */,
+				E99C505E10221885F4C84B87 /* Pods */,
+				083D0DB386925B15E182AEC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,11 +173,9 @@
 		3F70EBE52BC8C51F00A0DD79 /* MyMoney */ = {
 			isa = PBXGroup;
 			children = (
-				3F6BB3C52BE3747E00F33522 /* Regular */,
+				3F8B7BFC2BD2446800432EEA /*  Model & Extension */,
 				3F0D5CF02BE32A1C0016B24A /* Login&Regis */,
-				3F8B7BFC2BD2446800432EEA /* Model */,
 				3F70EBFE2BCF59C500A0DD79 /* TabBarNavigationView */,
-				3F0D5CEF2BE329FF0016B24A /* NavigationView */,
 				3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */,
 				3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */,
 				3F70EBEC2BC8C51F00A0DD79 /* Main.storyboard */,
@@ -162,10 +183,6 @@
 				3F70EBF12BC8C52000A0DD79 /* LaunchScreen.storyboard */,
 				3F70EBF42BC8C52000A0DD79 /* Info.plist */,
 				3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */,
-				3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */,
-				3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */,
-				3F6BB3CE2BE4E86800F33522 /* HistoryCollectionViewCell.swift */,
-				3F6BB3D02BEB0E8300F33522 /* Extension.swift */,
 			);
 			path = MyMoney;
 			sourceTree = "<group>";
@@ -174,17 +191,51 @@
 			isa = PBXGroup;
 			children = (
 				3F0D5CEE2BE329B40016B24A /* MainView */,
-				3F70EC012BCF631600A0DD79 /* ProfileViewController.swift */,
+				3F78F71A2BF49DDE00DC57B5 /* Profile */,
 			);
 			path = TabBarNavigationView;
 			sourceTree = "<group>";
 		};
-		3F8B7BFC2BD2446800432EEA /* Model */ = {
+		3F78F7182BF49D9D00DC57B5 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3F6BB3DD2BF338DE00F33522 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		3F78F7192BF49DB400DC57B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3F78F71A2BF49DDE00DC57B5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3F70EC012BCF631600A0DD79 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3F8B7BFC2BD2446800432EEA /*  Model & Extension */ = {
 			isa = PBXGroup;
 			children = (
 				3F8B7BFA2BD2446300432EEA /* DataModel.swift */,
+				3F6BB3D02BEB0E8300F33522 /* Extension.swift */,
 			);
-			path = Model;
+			path = " Model & Extension";
+			sourceTree = "<group>";
+		};
+		E99C505E10221885F4C84B87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				655C3322345DC3EE621E1F62 /* Pods-MyMoney.debug.xcconfig */,
+				1B05F52F67E8D0F4C37170D7 /* Pods-MyMoney.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F70EBF72BC8C52000A0DD79 /* Build configuration list for PBXNativeTarget "MyMoney" */;
 			buildPhases = (
+				04AB6E3111D1A6580DC6794E /* [CP] Check Pods Manifest.lock */,
 				3F70EBDF2BC8C51F00A0DD79 /* Sources */,
 				3F70EBE02BC8C51F00A0DD79 /* Frameworks */,
 				3F70EBE12BC8C51F00A0DD79 /* Resources */,
+				CBCBE5E393FA167FBAE23558 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,15 +306,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04AB6E3111D1A6580DC6794E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMoney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBCBE5E393FA167FBAE23558 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMoney/Pods-MyMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMoney/Pods-MyMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMoney/Pods-MyMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F70EBDF2BC8C51F00A0DD79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6BB3DE2BF338DE00F33522 /* CalendarViewController.swift in Sources */,
 				3F70EC022BCF631600A0DD79 /* ProfileViewController.swift in Sources */,
 				3F70EC072BCFACA800A0DD79 /* StatememtListCell.swift in Sources */,
 				3F6BB3C72BE3859C00F33522 /* RegularCollectionViewCell.swift in Sources */,
-				3F70EBEB2BC8C51F00A0DD79 /* ViewController.swift in Sources */,
+				3F70EBEB2BC8C51F00A0DD79 /* LoginViewController.swift in Sources */,
 				3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */,
 				3F6BB3CF2BE4E86800F33522 /* HistoryCollectionViewCell.swift in Sources */,
 				3F8B7C002BD7891300432EEA /* CategoryViewController.swift in Sources */,
@@ -339,7 +435,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -402,7 +498,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -423,6 +519,7 @@
 		};
 		3F70EBF82BC8C52000A0DD79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 655C3322345DC3EE621E1F62 /* Pods-MyMoney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -454,6 +551,7 @@
 		};
 		3F70EBF92BC8C52000A0DD79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B05F52F67E8D0F4C37170D7 /* Pods-MyMoney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

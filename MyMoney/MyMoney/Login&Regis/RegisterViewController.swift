@@ -53,7 +53,7 @@ class RegisterViewController : UIViewController {
 
 extension RegisterViewController {
     func requestRegister() {
-        guard let url = URL(string: "http://localhost:8080/insert-user") else {
+        guard let url = URL(string: "\(ipURL)/insert-user") else {
             print("Invalid URL")
             return
         }

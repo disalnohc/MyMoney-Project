@@ -10,6 +10,7 @@ import UIKit
 class StatememtListCell: UICollectionViewCell {
     
     @IBOutlet weak var listView: UIView!
+    @IBOutlet weak var backgroundCategory: UIView!
     
     @IBOutlet weak var listImage: UIImageView!
     @IBOutlet weak var listCategory: UILabel!

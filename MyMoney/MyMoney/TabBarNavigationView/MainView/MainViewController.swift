@@ -6,21 +6,22 @@
 //
 
 import UIKit
-
+import FSCalendar
 class MainViewController: UIViewController {
 
     @IBOutlet weak var statementCollection: UICollectionView!
     
     var monthYear : [dateHeader]?
     var statementDataDictionary: [String: [Statement]] = [:] // keep data fetching
-    
     //view
     @IBOutlet weak var historyView: UIView!
     @IBOutlet weak var calendarView: UIView!
     @IBOutlet weak var regularView: UIView!
     @IBOutlet weak var categoryView: UIView!
     
+    @IBOutlet weak var walletView: UIView!
     
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var expensesAmount: UILabel!
     @IBOutlet weak var incomeAmount: UILabel!
     @IBOutlet weak var balanceAmount: UILabel!
@@ -38,8 +39,15 @@ class MainViewController: UIViewController {
         calendarView.layer.cornerRadius = 10
         categoryView.layer.cornerRadius = 10
         regularView.layer.cornerRadius = 10
+        walletView.layer.cornerRadius = 10
         
-        balanceAmount.text = userAmount
+        userNameLabel.text = "Username : \(userName)"
+        balanceAmount.text = String(format: "%.2f", Double(userBalance) ?? 0.0)
+
+        
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideCalendar))
+//            self.view.addGestureRecognizer(tapGestureRecognizer)
+        
     }
     
     class func initVC() -> MainViewController {
@@ -71,11 +79,18 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(HistoryViewController.initVC(), animated: true)
     }
     
+    @IBAction func buttonCalendarTap(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let calendarController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+        calendarController.modalPresentationStyle = .popover
+        navigationController?.present(calendarController, animated: true)
+        
+    }
 }
 
 extension MainViewController {
     func getDateRequest() {
-        guard let url = URL(string: "http://localhost:8080/statement-getMonth") else {
+        guard let url = URL(string: "\(ipURL)/statement-getMonth/\(userName)") else {
             print("Invalid URL")
             return
         }
@@ -94,6 +109,10 @@ extension MainViewController {
                     if let data = data {
                         if let decodedData = try? JSONDecoder().decode([dateHeader].self, from: data) {
                             self.monthYear = decodedData
+                            DispatchQueue.main.async {
+                                self.incomeAmount.text = "\(String(format: "%.2f", self.monthYear?.first?.income ?? 0))"
+                                self.expensesAmount.text = "\(String(format: "%.2f", self.monthYear?.first?.expenses ?? 0))"
+                            }
                             self.getStatementData()
                             print("Decoded Date to monthYear success.")
                         } else {
@@ -114,7 +133,7 @@ extension MainViewController {
     func getStatementData() {
         if let monthYear = monthYear {
             for i in monthYear {
-                guard let url = URL(string: "http://localhost:8080/statement-getData/\(i.yearMonth)") else {
+                guard let url = URL(string: "\(ipURL)/statement-getData/\(userName)/\(i.yearMonth)") else {
                     print("Invalid URL")
                     return
                 }
@@ -153,7 +172,7 @@ extension MainViewController {
     
     func getCategoryData() {
         
-        guard let url = URL(string: "http://localhost:8080/category/\(userName)") else {
+        guard let url = URL(string: "\(ipURL)/category/\(userName)") else {
             print("Invalid Url")
             return
         }
@@ -195,7 +214,6 @@ extension MainViewController {
         }
         task.resume()
     }
-
 }
 
 extension MainViewController : UICollectionViewDataSource {
@@ -209,7 +227,7 @@ extension MainViewController : UICollectionViewDataSource {
             sd.stateDate.text = monthYear[indexPath.row].yearMonth
             let income = String(format: "%.2f", monthYear[indexPath.row].income)
             let expenses = String(format: "%.2f", monthYear[indexPath.row].expenses)
-            sd.stateStatement.text = "Income: \(income), Expenses: \(expenses)"
+            sd.stateStatement.text = "Income: \(income) , Expenses: \(expenses)"
             sd.statementData = statementDataDictionary[monthYear[indexPath.row].yearMonth]
             sd.listStatementCollection.reloadData()
         }
@@ -233,12 +251,9 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         if let monthYear = monthYear, let statementData = statementDataDictionary[monthYear[indexPath.row].yearMonth], !statementData.isEmpty {
             let dataCount = CGFloat(statementData.count)
             let totalHeight = (dataCount * cellHeight) + 30
-            print("Height : \(cellHeight) * \(dataCount) = \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
         }
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }
-
-

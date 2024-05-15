@@ -44,6 +44,7 @@ extension StatementDateCell : UICollectionViewDataSource {
             } else {
                 sl.listNote.text = statement.description
             }            
+            sl.backgroundCategory.layer.cornerRadius = 10
             sl.listTimestamp.text = statement.date
             if statement.type == "income" {
                 if let incomeCategoryData = incomeCategory.first(where: { $0.name == statement.category }) {
