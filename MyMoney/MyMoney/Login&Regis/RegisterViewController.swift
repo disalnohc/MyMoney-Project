@@ -7,14 +7,6 @@
 
 import UIKit
 
-struct RegisterData : Codable {
-    let email : String
-    let password : String
-    let username : String
-    let phone : String
-}
-
-
 class RegisterViewController : UIViewController {
     
     var rgUsernameInput : String = ""
@@ -77,7 +69,7 @@ extension RegisterViewController {
             let statusCode = (response as! HTTPURLResponse).statusCode
             if statusCode == 200 {
                 print("SUCCESS")
-                self.createAlert("Create New Account!")
+                createAlert(on: self, message : "Create New Account!")
             } else {
                 print(statusCode)
             }
@@ -88,26 +80,18 @@ extension RegisterViewController {
     
     func checkDataField() {
         if (rgUsernameInput.isEmpty) {
-           createAlert("Username can't empty.")
+           createAlert(on: self, message: "Username can't empty.")
         } else if (rgEmailInput.isEmpty) {
-           createAlert("Email can't empty.")
+            createAlert(on: self, message: "Email can't empty.")
         } else if (rgPasswordInput.isEmpty) {
-            createAlert("Password can't empty.")
+            createAlert(on: self, message: "Password can't empty.")
         } else if (rgPhoneInput.isEmpty) {
-            createAlert("Phone number can't empty.")
+            createAlert(on: self, message: "Phone number can't empty.")
         } else if (rgPasswordInput != rgConfirmPasswordInput) {
-            createAlert("Password and Confirm Password doesn't match.")
+            createAlert(on: self, message: "Password and Confirm Password doesn't match.")
         } else {
             requestRegister()
         }
-    }
-    
-    public func createAlert(_ message : String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default)
-        
-        alert.addAction(ok)
-        self.present(alert, animated: true)
     }
 
 }

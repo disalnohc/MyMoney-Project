@@ -17,6 +17,8 @@ class AddStatementViewController: UIViewController {
     
     var ImageChange : Bool = false
             
+    var datePicker : UIDatePicker!
+    
     @IBOutlet weak var insertImage: UIImageView!
     @IBOutlet weak var AmountField: UITextField!
     @IBOutlet weak var NoteField: UITextField!
@@ -137,6 +139,41 @@ class AddStatementViewController: UIViewController {
     }
     @IBAction func buttonClearTap(_ sender: UIButton) {
         clearField()
+    }
+    @IBAction func CalendatBuutonTap(_ sender: UIButton) {
+        // Create the alert controller
+            let alertController = UIAlertController(title: "Select Date and Time", message: nil, preferredStyle: .alert)
+            
+            // Create the date picker
+            let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
+            datePicker.datePickerMode = .dateAndTime
+            datePicker.preferredDatePickerStyle = .compact
+            
+            // Add the date picker to the alert controller
+            alertController.view.addSubview(datePicker)
+            
+            // Add constraints to the date picker to center it within the alert
+            datePicker.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                datePicker.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor),
+                datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 50),
+                datePicker.widthAnchor.constraint(equalToConstant: 250),
+                datePicker.heightAnchor.constraint(equalToConstant: 150)
+            ])
+            
+            // Add OK and Cancel actions
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                // Handle the date selected
+                let selectedDate = datePicker.date
+                print("Selected date: \(selectedDate)")
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // Present the alert controller
+            present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func butonInsertOneTap(_ sender: UIButton) {

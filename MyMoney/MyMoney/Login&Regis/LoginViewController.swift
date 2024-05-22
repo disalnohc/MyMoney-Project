@@ -16,11 +16,20 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var passwordField: UITextField!
     
+    var loadingBGView : UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadingIndicator.hidesWhenStopped = true
+        
+        loadingBGView = UIView(frame: view.bounds)
+        loadingBGView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        loadingBGView.isHidden = true
+                view.addSubview(loadingBGView)
+                view.bringSubviewToFront(loadingIndicator)
     }
 
     class func initVC() -> LoginViewController {
@@ -30,10 +39,21 @@ class LoginViewController: UIViewController {
         return vc
     }
     
+    func showLoadingIndicator() {
+            loadingBGView.isHidden = false
+            loadingIndicator.startAnimating()
+        }
+        
+        func hideLoadingIndicator() {
+            loadingBGView.isHidden = true
+            loadingIndicator.stopAnimating()
+        }
+    
     @IBAction func loginButton(_ sender: UIButton) {
         emailInput = emailField.text ?? ""
         passwordInput = passwordField.text ?? ""
         requestLogin()
+        showLoadingIndicator()
     }
     
     @IBAction func forgetPasswordTap(_ sender: UIButton) {
@@ -66,6 +86,9 @@ extension LoginViewController {
                             self.userLogin(self.userData!.email, self.userData!.password)
                             userName = self.userData!.username // setUserName
                             userBalance = self.userData!.balance // setAmount
+                            DispatchQueue.main.async {
+                                self.hideLoadingIndicator()
+                            }
                         } else {
                             print("Failed to decode JSON data.")
                         }

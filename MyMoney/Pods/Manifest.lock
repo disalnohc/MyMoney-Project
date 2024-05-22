@@ -1,16 +1,20 @@
 PODS:
   - FSCalendar (2.8.4)
+  - PieCharts (0.0.7)
 
 DEPENDENCIES:
   - FSCalendar
+  - PieCharts
 
 SPEC REPOS:
   trunk:
     - FSCalendar
+    - PieCharts
 
 SPEC CHECKSUMS:
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
+  PieCharts: 30e50dfa7dc19e5b84e9878d32089673ef5d0453
 
-PODFILE CHECKSUM: 97907eada31a9cf91c3bdf732b6f77e35f29348c
+PODFILE CHECKSUM: f7df615dc572675f0f367163bfe3c3d9a0231ba1
 
 COCOAPODS: 1.15.2

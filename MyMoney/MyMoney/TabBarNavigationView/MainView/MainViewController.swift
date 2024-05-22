@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var statementCollection: UICollectionView!
     
-    var monthYear : [dateHeader]?
     var statementDataDictionary: [String: [Statement]] = [:] // keep data fetching
     //view
     @IBOutlet weak var historyView: UIView!
@@ -42,7 +41,7 @@ class MainViewController: UIViewController {
         walletView.layer.cornerRadius = 10
         
         userNameLabel.text = "Username : \(userName)"
-        balanceAmount.text = String(format: "%.2f", Double(userBalance) ?? 0.0)
+        balanceAmount.text = String(demicalNumber(Double(userBalance) ?? 0.0))
 
         
 //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideCalendar))
@@ -82,7 +81,11 @@ class MainViewController: UIViewController {
     @IBAction func buttonCalendarTap(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let calendarController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-        calendarController.modalPresentationStyle = .popover
+        
+        calendarController.statementDataDictionary = self.statementDataDictionary
+        calendarController.monthYear = monthYear
+        
+        calendarController.modalPresentationStyle = .formSheet
         navigationController?.present(calendarController, animated: true)
         
     }
@@ -108,10 +111,10 @@ extension MainViewController {
                 if statuscode.statusCode == 200 {
                     if let data = data {
                         if let decodedData = try? JSONDecoder().decode([dateHeader].self, from: data) {
-                            self.monthYear = decodedData
+                            monthYear = decodedData
                             DispatchQueue.main.async {
-                                self.incomeAmount.text = "\(String(format: "%.2f", self.monthYear?.first?.income ?? 0))"
-                                self.expensesAmount.text = "\(String(format: "%.2f", self.monthYear?.first?.expenses ?? 0))"
+                                self.incomeAmount.text = "\(String(demicalNumber(Double(monthYear?.first?.income ?? 0.0))))"
+                                self.expensesAmount.text = "\(String(demicalNumber(Double(monthYear?.first?.expenses ?? 0.0))))"
                             }
                             self.getStatementData()
                             print("Decoded Date to monthYear success.")
@@ -245,7 +248,7 @@ extension MainViewController : UICollectionViewDataSource {
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.width - 20
+        let cellWidth = collectionView.frame.width 
         let cellHeight: CGFloat = 85
         
         if let monthYear = monthYear, let statementData = statementDataDictionary[monthYear[indexPath.row].yearMonth], !statementData.isEmpty {

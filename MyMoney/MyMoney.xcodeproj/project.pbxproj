@@ -26,6 +26,7 @@
 		3F70EC072BCFACA800A0DD79 /* StatememtListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */; };
 		3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */; };
 		3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */; };
+		3F78F71C2BFD925100DC57B5 /* PublicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */; };
 		3F8B7BFB2BD2446300432EEA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFA2BD2446300432EEA /* DataModel.swift */; };
 		3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */; };
 		3F8B7C002BD7891300432EEA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */; };
@@ -56,6 +57,7 @@
 		3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatememtListCell.swift; sourceTree = "<group>"; };
 		3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDateCell.swift; sourceTree = "<group>"; };
 		3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementViewController.swift; sourceTree = "<group>"; };
+		3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFunction.swift; sourceTree = "<group>"; };
 		3F8B7BFA2BD2446300432EEA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCategoryCell.swift; sourceTree = "<group>"; };
 		3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				3F8B7BFA2BD2446300432EEA /* DataModel.swift */,
 				3F6BB3D02BEB0E8300F33522 /* Extension.swift */,
+				3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */,
 			);
 			path = " Model & Extension";
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				3F70EBE72BC8C51F00A0DD79 /* AppDelegate.swift in Sources */,
 				3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */,
 				3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */,
+				3F78F71C2BFD925100DC57B5 /* PublicFunction.swift in Sources */,
 				3F0D5CEB2BE323C00016B24A /* RegularSubscribeViewController.swift in Sources */,
 				3F70EBE92BC8C51F00A0DD79 /* SceneDelegate.swift in Sources */,
 				3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */,

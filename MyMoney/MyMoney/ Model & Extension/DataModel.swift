@@ -11,12 +11,16 @@ var userName : String = ""
 var userBalance : String = ""
 var userIncome : String = ""
 var userExpenses : String = ""
-
 //var ipURL = "http://172.20.10.4:8080" // Device Test
 var ipURL = "http://localhost:8080" // Simulator Test
 
+var monthYear : [dateHeader]?
+
 var incomeCategory : [CategoryData] = []
 var expensesCategory : [CategoryData] = []
+
+var summarizeIncomeCategory : [CategorySummarize] = []
+var summarizeExpensesCategory : [CategorySummarize] = []
 
 struct UserData : Codable {
     let id : Int
@@ -25,6 +29,13 @@ struct UserData : Codable {
     let username : String
     let phone : String
     let balance : String
+}
+
+struct RegisterData : Codable {
+    let email : String
+    let password : String
+    let username : String
+    let phone : String
 }
 
 struct Statement: Codable {
@@ -83,3 +94,12 @@ struct History : Codable {
     let income : String
     let expenses : String
 }
+
+struct CategorySummarize : Codable {
+    let category : String
+    let type : String
+    let amount : Double
+    let date : String
+}
+
+

@@ -37,7 +37,7 @@ extension StatementDateCell : UICollectionViewDataSource {
         }
         if let data = statementData {
                     let statement = data[indexPath.item]
-                    sl.listAmount.text = "\(statement.amount)"
+            sl.listAmount.text = demicalNumber(Double(statement.amount) ?? 0.0)
                     sl.listCategory.text = statement.category
             if statement.description == "" {
                 sl.listNote.text = "No Note."
