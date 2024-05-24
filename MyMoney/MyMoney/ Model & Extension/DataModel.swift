@@ -11,10 +11,16 @@ var userName : String = ""
 var userBalance : String = ""
 var userIncome : String = ""
 var userExpenses : String = ""
-//var ipURL = "http://172.20.10.4:8080" // Device Test
+
+// Check Device and Change IP
+#if targetEnvironment(simulator)
 var ipURL = "http://localhost:8080" // Simulator Test
+#else
+var ipURL = "http://172.20.10.4:8080" // Device Test
+#endif
 
 var monthYear : [dateHeader]?
+var statementDataDictionary: [String: [Statement]] = [:] // keep data fetching
 
 var incomeCategory : [CategoryData] = []
 var expensesCategory : [CategoryData] = []

@@ -18,6 +18,7 @@ class AddStatementViewController: UIViewController {
     var ImageChange : Bool = false
             
     var datePicker : UIDatePicker!
+    var dateTime: String = ""
     
     @IBOutlet weak var insertImage: UIImageView!
     @IBOutlet weak var AmountField: UITextField!
@@ -35,6 +36,7 @@ class AddStatementViewController: UIViewController {
         // Set Date String
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let currentDate = Date()
+        
         dateString = dateFormatter.string(from: currentDate)
         
         //datasource
@@ -141,39 +143,24 @@ class AddStatementViewController: UIViewController {
         clearField()
     }
     @IBAction func CalendatBuutonTap(_ sender: UIButton) {
-        // Create the alert controller
-            let alertController = UIAlertController(title: "Select Date and Time", message: nil, preferredStyle: .alert)
-            
-            // Create the date picker
-            let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: 250, height: 150))
-            datePicker.datePickerMode = .dateAndTime
-            datePicker.preferredDatePickerStyle = .compact
-            
-            // Add the date picker to the alert controller
-            alertController.view.addSubview(datePicker)
-            
-            // Add constraints to the date picker to center it within the alert
-            datePicker.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                datePicker.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor),
-                datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 50),
-                datePicker.widthAnchor.constraint(equalToConstant: 250),
-                datePicker.heightAnchor.constraint(equalToConstant: 150)
-            ])
-            
-            // Add OK and Cancel actions
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                // Handle the date selected
-                let selectedDate = datePicker.date
-                print("Selected date: \(selectedDate)")
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
-            
-            // Present the alert controller
-            present(alertController, animated: true, completion: nil)
+        let dateFormmatted = DateFormatter()
+        
+        let datePickerView = AddStatementDatePicker(frame: CGRect(x: 0, y: 0, width: 300, height: 223))
+                datePickerView.center = self.view.center
+                datePickerView.uiView.layer.cornerRadius = 20
+                
+        datePickerView.onSave = { [weak self] selectedDateTime in
+                    dateFormmatted.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    self?.dateTime = dateFormmatted.string(from: selectedDateTime)
+                    //print("Selected DateTime: \(self?.dateTime ?? "nil")")
+                    datePickerView.removeFromSuperview()
+                }
+                
+                datePickerView.onCancel = {
+                    datePickerView.removeFromSuperview()
+                }
+                
+                self.view.addSubview(datePickerView)
     }
     
     @IBAction func butonInsertOneTap(_ sender: UIButton) {
@@ -252,11 +239,11 @@ extension AddStatementViewController {
 
         let statementData = StatememtData(
             username: userName,
-            amount: formatAmount,
+            amount: "\(formatAmount)",
             description: NoteField.text ?? "",
             type: type,
             category: categoryName,
-            date: dateString
+            date: (self.dateTime.isEmpty ) ? dateString : self.dateTime
         )
 
         let postData = try! JSONEncoder().encode(statementData)
@@ -393,7 +380,6 @@ extension AddStatementViewController {
             let categoryDisplay = category[indexPath.row]
             cateCell.categoryImage.image = UIImage(data: categoryDisplay.image ?? Data())
             cateCell.categoryLabel.text = categoryDisplay.name
-            cateCell.backgroundCategory.backgroundColor = .init(hex: categoryDisplay.bgcolor)
             
             cateCell.backgroundCategory.layer.cornerRadius = 10
 

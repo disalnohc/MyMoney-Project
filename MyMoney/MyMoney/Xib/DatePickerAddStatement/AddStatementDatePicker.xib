@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddStatementDatePicker" customModule="MyMoney" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="edP-Gk-QdL" id="e9e-bS-2xn"/>
+                <outlet property="datePicker" destination="NjE-rK-SuX" id="pAu-ye-ud8"/>
+                <outlet property="saveButton" destination="bEt-JP-g9l" id="4UP-12-UHq"/>
+                <outlet property="timePicker" destination="Bwd-ih-t9j" id="Qwe-vk-Qzn"/>
+                <outlet property="uiView" destination="oQV-bD-vEF" id="MLD-U3-fcF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="oQV-bD-vEF">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-JM-BqN">
+                    <rect key="frame" x="40" y="83" width="45" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4M3-nc-WjN">
+                    <rect key="frame" x="40" y="139" width="46.666666666666657" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="NjE-rK-SuX">
+                    <rect key="frame" x="117" y="74" width="151" height="38.333333333333343"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Bwd-ih-t9j">
+                    <rect key="frame" x="110.66666666666669" y="129.33333333333334" width="78.333333333333314" height="39.666666666666657"/>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date and Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oiz-on-yJB">
+                    <rect key="frame" x="44.333333333333329" y="23" width="211.33333333333337" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edP-Gk-QdL">
+                    <rect key="frame" x="175.33333333333334" y="185" width="76.666666666666657" height="41"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Cancel">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEt-JP-g9l">
+                    <rect key="frame" x="52" y="185" width="61" height="41"/>
+                    <color key="tintColor" red="0.25098040700000002" green="0.46666666870000001" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Save">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" red="0.25098040700000002" green="0.46666666870000001" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Tuj-JK-xdh"/>
+            <color key="backgroundColor" red="0.69019609689999994" green="0.75686275960000005" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="edP-Gk-QdL" firstAttribute="top" secondItem="Bwd-ih-t9j" secondAttribute="bottom" constant="16" id="6M6-z3-ARf"/>
+                <constraint firstItem="edP-Gk-QdL" firstAttribute="leading" secondItem="bEt-JP-g9l" secondAttribute="trailing" constant="62.333333333333343" id="B2J-9B-3gZ"/>
+                <constraint firstItem="Tuj-JK-xdh" firstAttribute="trailing" secondItem="NjE-rK-SuX" secondAttribute="trailing" constant="32" id="Fi2-Il-o9v"/>
+                <constraint firstItem="NjE-rK-SuX" firstAttribute="leading" secondItem="X2F-JM-BqN" secondAttribute="trailing" constant="32" id="H3V-kR-hqW"/>
+                <constraint firstItem="4M3-nc-WjN" firstAttribute="top" secondItem="X2F-JM-BqN" secondAttribute="bottom" constant="35" id="IjQ-7n-A2v"/>
+                <constraint firstItem="NjE-rK-SuX" firstAttribute="top" secondItem="Oiz-on-yJB" secondAttribute="bottom" constant="23" id="PAu-Ps-2TH"/>
+                <constraint firstItem="Bwd-ih-t9j" firstAttribute="leading" secondItem="4M3-nc-WjN" secondAttribute="trailing" constant="24" id="TTN-X4-4lA"/>
+                <constraint firstItem="bEt-JP-g9l" firstAttribute="top" secondItem="Bwd-ih-t9j" secondAttribute="bottom" constant="16" id="Zwk-1S-QBs"/>
+                <constraint firstItem="Oiz-on-yJB" firstAttribute="top" secondItem="oQV-bD-vEF" secondAttribute="top" constant="23" id="bop-Mb-nY4"/>
+                <constraint firstItem="Tuj-JK-xdh" firstAttribute="bottom" secondItem="edP-Gk-QdL" secondAttribute="bottom" constant="10" id="eDF-zA-mdS"/>
+                <constraint firstItem="Tuj-JK-xdh" firstAttribute="bottom" secondItem="bEt-JP-g9l" secondAttribute="bottom" constant="10" id="gpk-AF-Xhd"/>
+                <constraint firstItem="X2F-JM-BqN" firstAttribute="leading" secondItem="Tuj-JK-xdh" secondAttribute="leading" constant="40" id="i32-0V-vdo"/>
+                <constraint firstItem="X2F-JM-BqN" firstAttribute="top" secondItem="Oiz-on-yJB" secondAttribute="bottom" constant="32" id="idk-st-XGX"/>
+                <constraint firstItem="Tuj-JK-xdh" firstAttribute="trailing" secondItem="edP-Gk-QdL" secondAttribute="trailing" constant="48" id="lni-sK-O83"/>
+                <constraint firstItem="Oiz-on-yJB" firstAttribute="centerX" secondItem="oQV-bD-vEF" secondAttribute="centerX" id="m47-5W-Gsa"/>
+                <constraint firstItem="Oiz-on-yJB" firstAttribute="leading" secondItem="oQV-bD-vEF" secondAttribute="leading" constant="44.329999999999998" id="nMY-CQ-c6g"/>
+                <constraint firstItem="bEt-JP-g9l" firstAttribute="leading" secondItem="Tuj-JK-xdh" secondAttribute="leading" constant="52" id="nMY-US-UpW"/>
+                <constraint firstItem="Tuj-JK-xdh" firstAttribute="trailing" secondItem="Bwd-ih-t9j" secondAttribute="trailing" constant="111" id="plQ-gm-g9K"/>
+                <constraint firstItem="4M3-nc-WjN" firstAttribute="leading" secondItem="Tuj-JK-xdh" secondAttribute="leading" constant="40" id="xWm-hJ-JTo"/>
+                <constraint firstItem="Bwd-ih-t9j" firstAttribute="top" secondItem="NjE-rK-SuX" secondAttribute="bottom" constant="17" id="zzV-jb-icZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="494.6564885496183" y="-279.92957746478874"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

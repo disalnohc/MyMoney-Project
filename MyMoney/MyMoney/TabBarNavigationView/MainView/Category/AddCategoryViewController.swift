@@ -183,6 +183,11 @@ extension AddCategoryViewController {
             if let statusCode = response as? HTTPURLResponse {
                 if statusCode.statusCode == 200 {
                     print("Success")
+                    if self.selectedOption.lowercased() == "income" {
+                        incomeCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "income", image: imageData))
+                    } else {
+                        expensesCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "expenses", image: imageData))
+                    }
                 } else {
                     print("Failed : \(statusCode.statusCode)")
                 }

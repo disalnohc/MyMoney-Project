@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseCycle" customModule="MyMoney" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="BQ4-BK-H4q" id="RJa-Oz-sEw"/>
+                <outlet property="saveButton" destination="r4D-rW-80k" id="MDb-fb-ygL"/>
+                <outlet property="segmentSelected" destination="nwf-Pa-RuG" id="efq-WS-bBj"/>
+                <outlet property="viewShowItem" destination="pOD-if-hoR" id="iFB-aL-uq7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gKf-wQ-yCX">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nwf-Pa-RuG">
+                    <rect key="frame" x="100" y="59" width="193" height="32"/>
+                    <segments>
+                        <segment title="Day"/>
+                        <segment title="Month"/>
+                        <segment title="Years"/>
+                    </segments>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOD-if-hoR">
+                    <rect key="frame" x="0.0" y="90" width="393" height="170"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-rW-80k">
+                    <rect key="frame" x="116" y="260" width="61" height="41"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Save">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" red="0.34901961679999999" green="0.4352940917" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-BK-H4q">
+                    <rect key="frame" x="216" y="260" width="77" height="41"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Cancel">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="GQT-Ao-zHH"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="GQT-Ao-zHH" firstAttribute="trailing" secondItem="pOD-if-hoR" secondAttribute="trailing" id="1BG-ew-vlK"/>
+                <constraint firstItem="pOD-if-hoR" firstAttribute="leading" secondItem="GQT-Ao-zHH" secondAttribute="leading" id="4uJ-C5-VaI"/>
+                <constraint firstItem="nwf-Pa-RuG" firstAttribute="centerX" secondItem="gKf-wQ-yCX" secondAttribute="centerX" id="7G4-yF-q5m"/>
+                <constraint firstItem="GQT-Ao-zHH" firstAttribute="trailing" secondItem="BQ4-BK-H4q" secondAttribute="trailing" constant="100" id="8uF-E2-rg5"/>
+                <constraint firstItem="nwf-Pa-RuG" firstAttribute="top" secondItem="GQT-Ao-zHH" secondAttribute="top" id="WZt-ZH-xi6"/>
+                <constraint firstItem="GQT-Ao-zHH" firstAttribute="bottom" secondItem="r4D-rW-80k" secondAttribute="bottom" constant="15" id="cuK-S1-lgK"/>
+                <constraint firstItem="nwf-Pa-RuG" firstAttribute="leading" secondItem="GQT-Ao-zHH" secondAttribute="leading" constant="100" id="dbd-kB-jW3"/>
+                <constraint firstItem="r4D-rW-80k" firstAttribute="top" secondItem="pOD-if-hoR" secondAttribute="bottom" id="eUL-nf-e9A"/>
+                <constraint firstItem="pOD-if-hoR" firstAttribute="top" secondItem="nwf-Pa-RuG" secondAttribute="bottom" id="vPk-3E-NSJ"/>
+                <constraint firstItem="GQT-Ao-zHH" firstAttribute="bottom" secondItem="BQ4-BK-H4q" secondAttribute="bottom" constant="15" id="vsg-Y5-sG4"/>
+                <constraint firstItem="r4D-rW-80k" firstAttribute="leading" secondItem="GQT-Ao-zHH" secondAttribute="leading" constant="116" id="zTd-UO-7Vf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="230" y="-210"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

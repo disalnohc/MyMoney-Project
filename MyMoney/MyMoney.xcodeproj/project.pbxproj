@@ -27,10 +27,14 @@
 		3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */; };
 		3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */; };
 		3F78F71C2BFD925100DC57B5 /* PublicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */; };
+		3F790D172C00785000BDEC04 /* AddStatementDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F790D162C00785000BDEC04 /* AddStatementDatePicker.swift */; };
+		3F790D192C00785C00BDEC04 /* AddStatementDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F790D182C00785C00BDEC04 /* AddStatementDatePicker.xib */; };
 		3F8B7BFB2BD2446300432EEA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFA2BD2446300432EEA /* DataModel.swift */; };
 		3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */; };
-		3F8B7C002BD7891300432EEA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */; };
+		3F8B7C002BD7891300432EEA /* SummarizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFF2BD7891300432EEA /* SummarizeViewController.swift */; };
 		3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */; };
+		3FA6DDF32C008F7000D0AFA3 /* ChooseCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */; };
+		3FA6DDF82C008FB700D0AFA3 /* ChooseCyle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */; };
 		A680363514A26A53FA234E89 /* Pods_MyMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +62,14 @@
 		3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDateCell.swift; sourceTree = "<group>"; };
 		3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementViewController.swift; sourceTree = "<group>"; };
 		3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFunction.swift; sourceTree = "<group>"; };
+		3F790D162C00785000BDEC04 /* AddStatementDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementDatePicker.swift; sourceTree = "<group>"; };
+		3F790D182C00785C00BDEC04 /* AddStatementDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddStatementDatePicker.xib; sourceTree = "<group>"; };
 		3F8B7BFA2BD2446300432EEA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCategoryCell.swift; sourceTree = "<group>"; };
-		3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		3F8B7BFF2BD7891300432EEA /* SummarizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizeViewController.swift; sourceTree = "<group>"; };
 		3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCycle.swift; sourceTree = "<group>"; };
+		3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCyle.xib; sourceTree = "<group>"; };
 		655C3322345DC3EE621E1F62 /* Pods-MyMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoney.debug.xcconfig"; path = "Target Support Files/Pods-MyMoney/Pods-MyMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +100,7 @@
 				3F70EBFF2BCF5A2900A0DD79 /* MainViewController.swift */,
 				3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */,
 				3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */,
+				3F8B7BFF2BD7891300432EEA /* SummarizeViewController.swift */,
 				3F6BB3D22BEB5E4500F33522 /* History */,
 				3F6BB3C52BE3747E00F33522 /* Regular */,
 				3F78F7192BF49DB400DC57B5 /* Category */,
@@ -178,13 +187,13 @@
 				3F8B7BFC2BD2446800432EEA /*  Model & Extension */,
 				3F0D5CF02BE32A1C0016B24A /* Login&Regis */,
 				3F70EBFE2BCF59C500A0DD79 /* TabBarNavigationView */,
+				3FA6DDF42C008F7600D0AFA3 /* Xib */,
 				3F70EBE62BC8C51F00A0DD79 /* AppDelegate.swift */,
 				3F70EBE82BC8C51F00A0DD79 /* SceneDelegate.swift */,
 				3F70EBEC2BC8C51F00A0DD79 /* Main.storyboard */,
 				3F70EBEF2BC8C52000A0DD79 /* Assets.xcassets */,
 				3F70EBF12BC8C52000A0DD79 /* LaunchScreen.storyboard */,
 				3F70EBF42BC8C52000A0DD79 /* Info.plist */,
-				3F8B7BFF2BD7891300432EEA /* CategoryViewController.swift */,
 			);
 			path = MyMoney;
 			sourceTree = "<group>";
@@ -230,6 +239,33 @@
 				3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */,
 			);
 			path = " Model & Extension";
+			sourceTree = "<group>";
+		};
+		3FA6DDF42C008F7600D0AFA3 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DDF62C008F9B00D0AFA3 /* ChooseCyle */,
+				3FA6DDF52C008F8900D0AFA3 /* DatePickerAddStatement */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		3FA6DDF52C008F8900D0AFA3 /* DatePickerAddStatement */ = {
+			isa = PBXGroup;
+			children = (
+				3F790D162C00785000BDEC04 /* AddStatementDatePicker.swift */,
+				3F790D182C00785C00BDEC04 /* AddStatementDatePicker.xib */,
+			);
+			path = DatePickerAddStatement;
+			sourceTree = "<group>";
+		};
+		3FA6DDF62C008F9B00D0AFA3 /* ChooseCyle */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */,
+				3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */,
+			);
+			path = ChooseCyle;
 			sourceTree = "<group>";
 		};
 		E99C505E10221885F4C84B87 /* Pods */ = {
@@ -302,6 +338,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F70EBF32BC8C52000A0DD79 /* LaunchScreen.storyboard in Resources */,
+				3FA6DDF82C008FB700D0AFA3 /* ChooseCyle.xib in Resources */,
+				3F790D192C00785C00BDEC04 /* AddStatementDatePicker.xib in Resources */,
 				3F70EBF02BC8C52000A0DD79 /* Assets.xcassets in Resources */,
 				3F70EBEE2BC8C51F00A0DD79 /* Main.storyboard in Resources */,
 			);
@@ -363,8 +401,9 @@
 				3F70EBEB2BC8C51F00A0DD79 /* LoginViewController.swift in Sources */,
 				3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */,
 				3F6BB3CF2BE4E86800F33522 /* HistoryCollectionViewCell.swift in Sources */,
-				3F8B7C002BD7891300432EEA /* CategoryViewController.swift in Sources */,
+				3F8B7C002BD7891300432EEA /* SummarizeViewController.swift in Sources */,
 				3F70EBE72BC8C51F00A0DD79 /* AppDelegate.swift in Sources */,
+				3F790D172C00785000BDEC04 /* AddStatementDatePicker.swift in Sources */,
 				3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */,
 				3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */,
 				3F78F71C2BFD925100DC57B5 /* PublicFunction.swift in Sources */,
@@ -373,6 +412,7 @@
 				3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */,
 				3F6BB3D12BEB0E8300F33522 /* Extension.swift in Sources */,
 				3F70EBFD2BC90D9700A0DD79 /* RegisterViewController.swift in Sources */,
+				3FA6DDF32C008F7000D0AFA3 /* ChooseCycle.swift in Sources */,
 				3F8B7BFB2BD2446300432EEA /* DataModel.swift in Sources */,
 				3F6BB3C42BE3747500F33522 /* AddRegularSubscribeViewController.swift in Sources */,
 				3F6BB3CD2BE4E76D00F33522 /* HistoryViewController.swift in Sources */,

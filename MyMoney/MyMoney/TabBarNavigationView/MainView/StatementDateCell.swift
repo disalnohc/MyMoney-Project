@@ -37,22 +37,24 @@ extension StatementDateCell : UICollectionViewDataSource {
         }
         if let data = statementData {
                     let statement = data[indexPath.item]
-            sl.listAmount.text = demicalNumber(Double(statement.amount) ?? 0.0)
                     sl.listCategory.text = statement.category
             if statement.description == "" {
                 sl.listNote.text = "No Note."
             } else {
                 sl.listNote.text = statement.description
             }            
-            sl.backgroundCategory.layer.cornerRadius = 10
             sl.listTimestamp.text = statement.date
             if statement.type == "income" {
                 if let incomeCategoryData = incomeCategory.first(where: { $0.name == statement.category }) {
                     sl.listImage.image = UIImage(data: incomeCategoryData.image ?? Data())
+                    sl.listAmount.text = "+ \(demicalNumber(Double(statement.amount) ?? 0.0))"
+                    sl.listAmount.textColor = UIColor(hex: "#177245")
                 }
             } else {
                 if let expensesCategoryData = expensesCategory.first(where: { $0.name == statement.category }) {
                     sl.listImage.image = UIImage(data: expensesCategoryData.image ?? Data())
+                    sl.listAmount.text = "- \(demicalNumber(Double(statement.amount) ?? 0.0))"
+                    sl.listAmount.textColor = UIColor(hex: "#f93f0b")
                 }
             }
             

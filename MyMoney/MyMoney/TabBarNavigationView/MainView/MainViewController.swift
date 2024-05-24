@@ -11,7 +11,6 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var statementCollection: UICollectionView!
     
-    var statementDataDictionary: [String: [Statement]] = [:] // keep data fetching
     //view
     @IBOutlet weak var historyView: UIView!
     @IBOutlet weak var calendarView: UIView!
@@ -82,7 +81,7 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let calendarController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
         
-        calendarController.statementDataDictionary = self.statementDataDictionary
+        calendarController.statementDataDictionary = statementDataDictionary
         calendarController.monthYear = monthYear
         
         calendarController.modalPresentationStyle = .formSheet
@@ -153,7 +152,7 @@ extension MainViewController {
                         if statuscode.statusCode == 200 {
                             if let data = data {
                                 if let decodedData = try? JSONDecoder().decode([Statement].self, from: data) {
-                                    self.statementDataDictionary[i.yearMonth] = decodedData
+                                    statementDataDictionary[i.yearMonth] = decodedData
                                     self.getCategoryData()
                                     print("Decoded Statement to Dictionnary success.")
                                 } else {
@@ -226,6 +225,7 @@ extension MainViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let sd = collectionView.dequeueReusableCell(withReuseIdentifier: "StatementDateCell", for: indexPath) as! StatementDateCell
+        
         if let monthYear = monthYear {
             sd.stateDate.text = monthYear[indexPath.row].yearMonth
             let income = String(format: "%.2f", monthYear[indexPath.row].income)
@@ -241,8 +241,6 @@ extension MainViewController : UICollectionViewDataSource {
             
             return sd
     }
-    
-
 
 }
 
