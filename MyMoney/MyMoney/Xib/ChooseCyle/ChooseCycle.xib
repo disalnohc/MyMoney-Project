@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseCycle" customModule="MyMoney" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="i4t-Li-E8a" id="tgk-kO-Rdd"/>
+                <outlet property="heightView" destination="xAq-Jm-5GP" id="uEj-uJ-N6v"/>
+                <outlet property="saveButton" destination="Fqi-1X-cNh" id="WPM-Jq-kIg"/>
+                <outlet property="segmentSelect" destination="mO4-xx-FZI" id="5a4-Ks-bFs"/>
+                <outlet property="uiView" destination="MWg-cR-akT" id="bqX-KD-YJr"/>
+                <outlet property="viewShowItem" destination="WLr-yl-w17" id="jT8-cy-qKt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="MWg-cR-akT">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mO4-xx-FZI">
+                    <rect key="frame" x="30" y="27" width="240" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="mPd-p1-Qwe"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Day"/>
+                        <segment title="Month"/>
+                        <segment title="Years"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentChange:" destination="-1" eventType="valueChanged" id="M20-Wp-5jt"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLr-yl-w17">
+                    <rect key="frame" x="0.0" y="98" width="300" height="170"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="170" id="xAq-Jm-5GP"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqi-1X-cNh">
+                    <rect key="frame" x="48" y="291" width="61" height="41"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Save">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" red="0.34901961679999999" green="0.4352940917" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="saveTapped:" destination="-1" eventType="touchUpInside" id="Phn-3B-3eL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4t-Li-E8a">
+                    <rect key="frame" x="178" y="291" width="77" height="41"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Cancel">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="cancelTapped:" destination="-1" eventType="touchUpInside" id="jN6-FI-TQV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="HZw-vL-z55"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="HZw-vL-z55" firstAttribute="trailing" secondItem="i4t-Li-E8a" secondAttribute="trailing" constant="45" id="6Yg-d8-Vm6"/>
+                <constraint firstItem="mO4-xx-FZI" firstAttribute="centerX" secondItem="MWg-cR-akT" secondAttribute="centerX" id="D8t-x8-Tfa"/>
+                <constraint firstItem="Fqi-1X-cNh" firstAttribute="top" secondItem="WLr-yl-w17" secondAttribute="bottom" constant="23" id="EXf-RP-LdA"/>
+                <constraint firstAttribute="bottom" secondItem="Fqi-1X-cNh" secondAttribute="bottom" constant="18" id="HOZ-D9-gtk"/>
+                <constraint firstItem="mO4-xx-FZI" firstAttribute="leading" secondItem="HZw-vL-z55" secondAttribute="leading" constant="30" id="JKB-ob-fmv"/>
+                <constraint firstItem="HZw-vL-z55" firstAttribute="trailing" secondItem="WLr-yl-w17" secondAttribute="trailing" id="UbJ-lW-S7X"/>
+                <constraint firstItem="WLr-yl-w17" firstAttribute="top" secondItem="mO4-xx-FZI" secondAttribute="bottom" constant="32" id="Uv9-oZ-SaN"/>
+                <constraint firstAttribute="bottom" secondItem="i4t-Li-E8a" secondAttribute="bottom" constant="18" id="aJA-v6-Gn9"/>
+                <constraint firstItem="mO4-xx-FZI" firstAttribute="top" secondItem="MWg-cR-akT" secondAttribute="top" constant="27" id="eER-TS-Ung"/>
+                <constraint firstItem="Fqi-1X-cNh" firstAttribute="leading" secondItem="HZw-vL-z55" secondAttribute="leading" constant="48" id="mIb-nQ-l67"/>
+                <constraint firstItem="WLr-yl-w17" firstAttribute="leading" secondItem="HZw-vL-z55" secondAttribute="leading" id="yUZ-XS-uXB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="230" y="-210"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController {
         calendarFS.delegate = self
         calendarFS.dataSource = self
         // Do any additional setup after loading the view.
+        setupDateFormatter()
     }
     
 
@@ -35,26 +36,20 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource {
         var amount = 0.0
 
         // Ex 2567-05
-        let yearMonthFormatter = DateFormatter()
-        yearMonthFormatter.dateFormat = "yyyy-MM"
         let yearMonthString = yearMonthFormatter.string(from: date)
         
         // Ex 2567-05-15 17:02:33
-        let inputDateFormatter = DateFormatter()
-        inputDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        inputDateFormatter.calendar = Calendar(identifier: .buddhist)
+        fullDateFormatter.calendar = Calendar(identifier: .buddhist)
         
         // Ex 2567-05-15
-        let outputDateFormatter = DateFormatter()
-        outputDateFormatter.dateFormat = "yyyy-MM-dd"
-        outputDateFormatter.calendar = Calendar(identifier: .buddhist)
+        simpleDateFormatter.calendar = Calendar(identifier: .buddhist)
         
         // Get Statement in month
         if let statementData = statementDataDictionary[yearMonthString] {
             // Reversed Data
             for statement in statementData.reversed() {
                 // Convert String to Date Formatted Input
-                if let statementDate = inputDateFormatter.date(from: statement.date) {
+                if let statementDate = fullDateFormatter.date(from: statement.date) {
                     // Convert Date Input to Formatted Outout
                     if Calendar.current.isDate(statementDate, equalTo: date, toGranularity: .day) {
                         if statement.type == "income" {

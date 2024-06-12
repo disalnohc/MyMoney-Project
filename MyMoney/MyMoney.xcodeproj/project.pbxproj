@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3F0D5CEB2BE323C00016B24A /* RegularSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D5CEA2BE323C00016B24A /* RegularSubscribeViewController.swift */; };
+		3F2011472C081EEA000EC871 /* ChooseEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2011462C081EEA000EC871 /* ChooseEnd.swift */; };
+		3F2011492C081EF3000EC871 /* ChooseEnd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F2011482C081EF3000EC871 /* ChooseEnd.xib */; };
+		3F20114C2C0822E2000EC871 /* SelectDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20114B2C0822E2000EC871 /* SelectDate.swift */; };
+		3F20114E2C0822EC000EC871 /* SelectDate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F20114D2C0822EC000EC871 /* SelectDate.xib */; };
 		3F6BB3C42BE3747500F33522 /* AddRegularSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3C32BE3747500F33522 /* AddRegularSubscribeViewController.swift */; };
 		3F6BB3C72BE3859C00F33522 /* RegularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3C62BE3859C00F33522 /* RegularCollectionViewCell.swift */; };
 		3F6BB3CD2BE4E76D00F33522 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */; };
@@ -22,7 +26,7 @@
 		3F70EBF32BC8C52000A0DD79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F70EBF12BC8C52000A0DD79 /* LaunchScreen.storyboard */; };
 		3F70EBFD2BC90D9700A0DD79 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBFC2BC90D9700A0DD79 /* RegisterViewController.swift */; };
 		3F70EC002BCF5A2900A0DD79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EBFF2BCF5A2900A0DD79 /* MainViewController.swift */; };
-		3F70EC022BCF631600A0DD79 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC012BCF631600A0DD79 /* ProfileViewController.swift */; };
+		3F70EC022BCF631600A0DD79 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC012BCF631600A0DD79 /* SettingViewController.swift */; };
 		3F70EC072BCFACA800A0DD79 /* StatememtListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */; };
 		3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */; };
 		3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */; };
@@ -33,14 +37,31 @@
 		3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */; };
 		3F8B7C002BD7891300432EEA /* SummarizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7BFF2BD7891300432EEA /* SummarizeViewController.swift */; };
 		3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */; };
+		3F95DE632C086EBD004E7D6B /* ChooseCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95DE612C086EBD004E7D6B /* ChooseCategoryCell.swift */; };
+		3F95DE642C086EBD004E7D6B /* ChooseCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F95DE622C086EBD004E7D6B /* ChooseCategoryCell.xib */; };
+		3F95DE662C09B628004E7D6B /* VariableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95DE652C09B628004E7D6B /* VariableModel.swift */; };
+		3F95DE682C115044004E7D6B /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95DE672C115044004E7D6B /* SettingCell.swift */; };
+		3F95DE6B2C115749004E7D6B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95DE6A2C115749004E7D6B /* ProfileViewController.swift */; };
 		3FA6DDF32C008F7000D0AFA3 /* ChooseCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */; };
-		3FA6DDF82C008FB700D0AFA3 /* ChooseCyle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */; };
+		3FA6DDFD2C05745900D0AFA3 /* ChooseDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DDFC2C05745900D0AFA3 /* ChooseDay.xib */; };
+		3FA6DDFF2C05746800D0AFA3 /* ChooseDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DDFE2C05746800D0AFA3 /* ChooseDay.swift */; };
+		3FA6DE012C05747800D0AFA3 /* ChooseMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DE002C05747800D0AFA3 /* ChooseMonth.swift */; };
+		3FA6DE032C05748300D0AFA3 /* ChooseMonth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DE022C05748300D0AFA3 /* ChooseMonth.xib */; };
+		3FA6DE052C05748E00D0AFA3 /* ChooseYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DE042C05748E00D0AFA3 /* ChooseYear.xib */; };
+		3FA6DE072C0574A400D0AFA3 /* ChooseYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DE062C0574A400D0AFA3 /* ChooseYear.swift */; };
+		3FA6DE092C05B6D400D0AFA3 /* ChooseCycle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DE082C05B6D400D0AFA3 /* ChooseCycle.xib */; };
+		3FA6DE0D2C08110100D0AFA3 /* ChooseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6DE0C2C08110100D0AFA3 /* ChooseCategory.swift */; };
+		3FA6DE0F2C08111000D0AFA3 /* ChooseCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6DE0E2C08111000D0AFA3 /* ChooseCategory.xib */; };
 		A680363514A26A53FA234E89 /* Pods_MyMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B05F52F67E8D0F4C37170D7 /* Pods-MyMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoney.release.xcconfig"; path = "Target Support Files/Pods-MyMoney/Pods-MyMoney.release.xcconfig"; sourceTree = "<group>"; };
 		3F0D5CEA2BE323C00016B24A /* RegularSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularSubscribeViewController.swift; sourceTree = "<group>"; };
+		3F2011462C081EEA000EC871 /* ChooseEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEnd.swift; sourceTree = "<group>"; };
+		3F2011482C081EF3000EC871 /* ChooseEnd.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseEnd.xib; sourceTree = "<group>"; };
+		3F20114B2C0822E2000EC871 /* SelectDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDate.swift; sourceTree = "<group>"; };
+		3F20114D2C0822EC000EC871 /* SelectDate.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDate.xib; sourceTree = "<group>"; };
 		3F6BB3C32BE3747500F33522 /* AddRegularSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularSubscribeViewController.swift; sourceTree = "<group>"; };
 		3F6BB3C62BE3859C00F33522 /* RegularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F6BB3CC2BE4E76D00F33522 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +78,7 @@
 		3F70EBF42BC8C52000A0DD79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F70EBFC2BC90D9700A0DD79 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F70EBFF2BCF5A2900A0DD79 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3F70EC012BCF631600A0DD79 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3F70EC012BCF631600A0DD79 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3F70EC062BCFACA800A0DD79 /* StatememtListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatememtListCell.swift; sourceTree = "<group>"; };
 		3F70EC082BCFAEB600A0DD79 /* StatementDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDateCell.swift; sourceTree = "<group>"; };
 		3F70EC0A2BD0C24300A0DD79 /* AddStatementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +89,21 @@
 		3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCategoryCell.swift; sourceTree = "<group>"; };
 		3F8B7BFF2BD7891300432EEA /* SummarizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizeViewController.swift; sourceTree = "<group>"; };
 		3F8B7C012BDF44A000432EEA /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		3F95DE612C086EBD004E7D6B /* ChooseCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryCell.swift; sourceTree = "<group>"; };
+		3F95DE622C086EBD004E7D6B /* ChooseCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCategoryCell.xib; sourceTree = "<group>"; };
+		3F95DE652C09B628004E7D6B /* VariableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableModel.swift; sourceTree = "<group>"; };
+		3F95DE672C115044004E7D6B /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		3F95DE6A2C115749004E7D6B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCycle.swift; sourceTree = "<group>"; };
-		3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCyle.xib; sourceTree = "<group>"; };
+		3FA6DDFC2C05745900D0AFA3 /* ChooseDay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseDay.xib; sourceTree = "<group>"; };
+		3FA6DDFE2C05746800D0AFA3 /* ChooseDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDay.swift; sourceTree = "<group>"; };
+		3FA6DE002C05747800D0AFA3 /* ChooseMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMonth.swift; sourceTree = "<group>"; };
+		3FA6DE022C05748300D0AFA3 /* ChooseMonth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseMonth.xib; sourceTree = "<group>"; };
+		3FA6DE042C05748E00D0AFA3 /* ChooseYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseYear.xib; sourceTree = "<group>"; };
+		3FA6DE062C0574A400D0AFA3 /* ChooseYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYear.swift; sourceTree = "<group>"; };
+		3FA6DE082C05B6D400D0AFA3 /* ChooseCycle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCycle.xib; sourceTree = "<group>"; };
+		3FA6DE0C2C08110100D0AFA3 /* ChooseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategory.swift; sourceTree = "<group>"; };
+		3FA6DE0E2C08111000D0AFA3 /* ChooseCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCategory.xib; sourceTree = "<group>"; };
 		655C3322345DC3EE621E1F62 /* Pods-MyMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoney.debug.xcconfig"; path = "Target Support Files/Pods-MyMoney/Pods-MyMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		9EE51028FC2B651C57303FDF /* Pods_MyMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +160,25 @@
 				3F8B7BFD2BD5F97000432EEA /* StatementCategoryCell.swift */,
 			);
 			path = AddStatementView;
+			sourceTree = "<group>";
+		};
+		3F2011452C081EC0000EC871 /* End */ = {
+			isa = PBXGroup;
+			children = (
+				3F20114A2C0822CC000EC871 /* Calendar Select */,
+				3F2011462C081EEA000EC871 /* ChooseEnd.swift */,
+				3F2011482C081EF3000EC871 /* ChooseEnd.xib */,
+			);
+			path = End;
+			sourceTree = "<group>";
+		};
+		3F20114A2C0822CC000EC871 /* Calendar Select */ = {
+			isa = PBXGroup;
+			children = (
+				3F20114B2C0822E2000EC871 /* SelectDate.swift */,
+				3F20114D2C0822EC000EC871 /* SelectDate.xib */,
+			);
+			path = "Calendar Select";
 			sourceTree = "<group>";
 		};
 		3F6BB3C52BE3747E00F33522 /* Regular */ = {
@@ -202,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0D5CEE2BE329B40016B24A /* MainView */,
-				3F78F71A2BF49DDE00DC57B5 /* Profile */,
+				3F78F71A2BF49DDE00DC57B5 /* Setting */,
 			);
 			path = TabBarNavigationView;
 			sourceTree = "<group>";
@@ -223,12 +276,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		3F78F71A2BF49DDE00DC57B5 /* Profile */ = {
+		3F78F71A2BF49DDE00DC57B5 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				3F70EC012BCF631600A0DD79 /* ProfileViewController.swift */,
+				3F95DE692C115725004E7D6B /* Profile */,
+				3F70EC012BCF631600A0DD79 /* SettingViewController.swift */,
+				3F95DE672C115044004E7D6B /* SettingCell.swift */,
 			);
-			path = Profile;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		3F8B7BFC2BD2446800432EEA /*  Model & Extension */ = {
@@ -237,13 +292,24 @@
 				3F8B7BFA2BD2446300432EEA /* DataModel.swift */,
 				3F6BB3D02BEB0E8300F33522 /* Extension.swift */,
 				3F78F71B2BFD925100DC57B5 /* PublicFunction.swift */,
+				3F95DE652C09B628004E7D6B /* VariableModel.swift */,
 			);
 			path = " Model & Extension";
+			sourceTree = "<group>";
+		};
+		3F95DE692C115725004E7D6B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3F95DE6A2C115749004E7D6B /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3FA6DDF42C008F7600D0AFA3 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				3FA6DE0B2C0810E200D0AFA3 /* Category */,
+				3FA6DE0A2C0810CD00D0AFA3 /* Cycle */,
 				3FA6DDF62C008F9B00D0AFA3 /* ChooseCyle */,
 				3FA6DDF52C008F8900D0AFA3 /* DatePickerAddStatement */,
 			);
@@ -263,9 +329,58 @@
 			isa = PBXGroup;
 			children = (
 				3FA6DDF22C008F7000D0AFA3 /* ChooseCycle.swift */,
-				3FA6DDF72C008FB700D0AFA3 /* ChooseCyle.xib */,
+				3FA6DE082C05B6D400D0AFA3 /* ChooseCycle.xib */,
 			);
 			path = ChooseCyle;
+			sourceTree = "<group>";
+		};
+		3FA6DDF92C00971400D0AFA3 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DDFC2C05745900D0AFA3 /* ChooseDay.xib */,
+				3FA6DDFE2C05746800D0AFA3 /* ChooseDay.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		3FA6DDFA2C00972000D0AFA3 /* Month */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DE002C05747800D0AFA3 /* ChooseMonth.swift */,
+				3FA6DE022C05748300D0AFA3 /* ChooseMonth.xib */,
+			);
+			path = Month;
+			sourceTree = "<group>";
+		};
+		3FA6DDFB2C00972900D0AFA3 /* Year */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DE042C05748E00D0AFA3 /* ChooseYear.xib */,
+				3FA6DE062C0574A400D0AFA3 /* ChooseYear.swift */,
+			);
+			path = Year;
+			sourceTree = "<group>";
+		};
+		3FA6DE0A2C0810CD00D0AFA3 /* Cycle */ = {
+			isa = PBXGroup;
+			children = (
+				3F2011452C081EC0000EC871 /* End */,
+				3FA6DDFB2C00972900D0AFA3 /* Year */,
+				3FA6DDFA2C00972000D0AFA3 /* Month */,
+				3FA6DDF92C00971400D0AFA3 /* Day */,
+			);
+			path = Cycle;
+			sourceTree = "<group>";
+		};
+		3FA6DE0B2C0810E200D0AFA3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6DE0C2C08110100D0AFA3 /* ChooseCategory.swift */,
+				3FA6DE0E2C08111000D0AFA3 /* ChooseCategory.xib */,
+				3F95DE612C086EBD004E7D6B /* ChooseCategoryCell.swift */,
+				3F95DE622C086EBD004E7D6B /* ChooseCategoryCell.xib */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		E99C505E10221885F4C84B87 /* Pods */ = {
@@ -338,7 +453,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F70EBF32BC8C52000A0DD79 /* LaunchScreen.storyboard in Resources */,
-				3FA6DDF82C008FB700D0AFA3 /* ChooseCyle.xib in Resources */,
+				3F20114E2C0822EC000EC871 /* SelectDate.xib in Resources */,
+				3FA6DE092C05B6D400D0AFA3 /* ChooseCycle.xib in Resources */,
+				3FA6DE052C05748E00D0AFA3 /* ChooseYear.xib in Resources */,
+				3FA6DDFD2C05745900D0AFA3 /* ChooseDay.xib in Resources */,
+				3FA6DE0F2C08111000D0AFA3 /* ChooseCategory.xib in Resources */,
+				3F95DE642C086EBD004E7D6B /* ChooseCategoryCell.xib in Resources */,
+				3FA6DE032C05748300D0AFA3 /* ChooseMonth.xib in Resources */,
+				3F2011492C081EF3000EC871 /* ChooseEnd.xib in Resources */,
 				3F790D192C00785C00BDEC04 /* AddStatementDatePicker.xib in Resources */,
 				3F70EBF02BC8C52000A0DD79 /* Assets.xcassets in Resources */,
 				3F70EBEE2BC8C51F00A0DD79 /* Main.storyboard in Resources */,
@@ -395,16 +517,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F6BB3DE2BF338DE00F33522 /* CalendarViewController.swift in Sources */,
-				3F70EC022BCF631600A0DD79 /* ProfileViewController.swift in Sources */,
+				3F70EC022BCF631600A0DD79 /* SettingViewController.swift in Sources */,
 				3F70EC072BCFACA800A0DD79 /* StatememtListCell.swift in Sources */,
 				3F6BB3C72BE3859C00F33522 /* RegularCollectionViewCell.swift in Sources */,
 				3F70EBEB2BC8C51F00A0DD79 /* LoginViewController.swift in Sources */,
 				3F8B7BFE2BD5F97000432EEA /* StatementCategoryCell.swift in Sources */,
+				3F95DE6B2C115749004E7D6B /* ProfileViewController.swift in Sources */,
 				3F6BB3CF2BE4E86800F33522 /* HistoryCollectionViewCell.swift in Sources */,
 				3F8B7C002BD7891300432EEA /* SummarizeViewController.swift in Sources */,
 				3F70EBE72BC8C51F00A0DD79 /* AppDelegate.swift in Sources */,
+				3FA6DDFF2C05746800D0AFA3 /* ChooseDay.swift in Sources */,
 				3F790D172C00785000BDEC04 /* AddStatementDatePicker.swift in Sources */,
+				3FA6DE0D2C08110100D0AFA3 /* ChooseCategory.swift in Sources */,
+				3F95DE632C086EBD004E7D6B /* ChooseCategoryCell.swift in Sources */,
+				3F95DE662C09B628004E7D6B /* VariableModel.swift in Sources */,
+				3FA6DE072C0574A400D0AFA3 /* ChooseYear.swift in Sources */,
 				3F8B7C022BDF44A000432EEA /* AddCategoryViewController.swift in Sources */,
+				3F2011472C081EEA000EC871 /* ChooseEnd.swift in Sources */,
+				3F95DE682C115044004E7D6B /* SettingCell.swift in Sources */,
 				3F70EC0B2BD0C24300A0DD79 /* AddStatementViewController.swift in Sources */,
 				3F78F71C2BFD925100DC57B5 /* PublicFunction.swift in Sources */,
 				3F0D5CEB2BE323C00016B24A /* RegularSubscribeViewController.swift in Sources */,
@@ -412,6 +542,8 @@
 				3F70EC092BCFAEB600A0DD79 /* StatementDateCell.swift in Sources */,
 				3F6BB3D12BEB0E8300F33522 /* Extension.swift in Sources */,
 				3F70EBFD2BC90D9700A0DD79 /* RegisterViewController.swift in Sources */,
+				3F20114C2C0822E2000EC871 /* SelectDate.swift in Sources */,
+				3FA6DE012C05747800D0AFA3 /* ChooseMonth.swift in Sources */,
 				3FA6DDF32C008F7000D0AFA3 /* ChooseCycle.swift in Sources */,
 				3F8B7BFB2BD2446300432EEA /* DataModel.swift in Sources */,
 				3F6BB3C42BE3747500F33522 /* AddRegularSubscribeViewController.swift in Sources */,

@@ -23,6 +23,7 @@ class RegisterViewController : UIViewController {
     @IBOutlet weak var rgPhoneField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHideKeyboardOnTap(on: self)
     }
     
     class func initVC() -> RegisterViewController {

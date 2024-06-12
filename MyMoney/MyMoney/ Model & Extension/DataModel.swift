@@ -7,18 +7,6 @@
 
 import Foundation
 
-var userName : String = ""
-var userBalance : String = ""
-var userIncome : String = ""
-var userExpenses : String = ""
-
-// Check Device and Change IP
-#if targetEnvironment(simulator)
-var ipURL = "http://localhost:8080" // Simulator Test
-#else
-var ipURL = "http://172.20.10.4:8080" // Device Test
-#endif
-
 var monthYear : [dateHeader]?
 var statementDataDictionary: [String: [Statement]] = [:] // keep data fetching
 
@@ -27,6 +15,10 @@ var expensesCategory : [CategoryData] = []
 
 var summarizeIncomeCategory : [CategorySummarize] = []
 var summarizeExpensesCategory : [CategorySummarize] = []
+
+var regularSubscribe : [Regular] = []
+
+var userInfo : [UserData] = []
 
 struct UserData : Codable {
     let id : Int
@@ -86,10 +78,10 @@ struct Regular : Codable {
     let id : Int
     let username : String
     let name : String
-    let price : String
+    let price : Double
     let start : String
     let end : String
-    let image : String
+    let cycle : String
     let type : String
 }
 

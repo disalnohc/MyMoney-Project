@@ -98,6 +98,10 @@ class AddCategoryViewController: UIViewController, UIPickerViewDataSource , UIPi
         addNewCategory()
     }
     
+    @IBAction func cancel(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension AddCategoryViewController {

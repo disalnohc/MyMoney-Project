@@ -12,7 +12,6 @@ class AddStatementViewController: UIViewController {
     var selectedIndexPath: IndexPath?
     
     var amount : String = ""
-    let dateFormatter = DateFormatter()
     var dateString : String = ""
     
     var ImageChange : Bool = false
@@ -32,17 +31,16 @@ class AddStatementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Set Date String
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        setupDateFormatter()
         let currentDate = Date()
         
-        dateString = dateFormatter.string(from: currentDate)
+        dateString = fullDateFormatter.string(from: currentDate)
         
         //datasource
         categoryCollection.dataSource = self
         categoryCollection.delegate = self
-        
+        setupHideKeyboardOnTap(on: self)
     }
     
     class func initVC() -> AddStatementViewController {
@@ -143,15 +141,13 @@ class AddStatementViewController: UIViewController {
         clearField()
     }
     @IBAction func CalendatBuutonTap(_ sender: UIButton) {
-        let dateFormmatted = DateFormatter()
         
         let datePickerView = AddStatementDatePicker(frame: CGRect(x: 0, y: 0, width: 300, height: 223))
                 datePickerView.center = self.view.center
                 datePickerView.uiView.layer.cornerRadius = 20
                 
         datePickerView.onSave = { [weak self] selectedDateTime in
-                    dateFormmatted.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                    self?.dateTime = dateFormmatted.string(from: selectedDateTime)
+                    self?.dateTime = fullDateFormatter.string(from: selectedDateTime)
                     //print("Selected DateTime: \(self?.dateTime ?? "nil")")
                     datePickerView.removeFromSuperview()
                 }

@@ -17,7 +17,7 @@ class AddStatementDatePicker: UIView {
     @IBOutlet weak var cancelButton: UIButton!
     
     var onSave: ((_ selectedDateTime: Date) -> Void)?
-        var onCancel: (() -> Void)?
+    var onCancel: (() -> Void)?
     
     
     override init(frame: CGRect) {

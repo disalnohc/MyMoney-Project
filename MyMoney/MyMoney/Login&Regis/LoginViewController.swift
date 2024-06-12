@@ -23,6 +23,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupHideKeyboardOnTap(on: self)
+        
         loadingIndicator.hidesWhenStopped = true
         
         loadingBGView = UIView(frame: view.bounds)
@@ -86,6 +88,8 @@ extension LoginViewController {
                             self.userLogin(self.userData!.email, self.userData!.password)
                             userName = self.userData!.username // setUserName
                             userBalance = self.userData!.balance // setAmount
+                            userInfo.append(self.userData!)
+                            //print(userInfo)
                             DispatchQueue.main.async {
                                 self.hideLoadingIndicator()
                             }
@@ -122,4 +126,5 @@ extension LoginViewController {
         }
         
     }
+    
 }

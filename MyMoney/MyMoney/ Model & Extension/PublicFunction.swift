@@ -11,11 +11,13 @@ import UIKit
 public func demicalNumber(_ number : Double) -> String {
     let numberFormatted = NumberFormatter()
     numberFormatted.numberStyle = .decimal
+    numberFormatted.maximumFractionDigits = 2
+    numberFormatted.minimumFractionDigits = 2
     
     if let amountFormatted = numberFormatted.string(from: NSNumber(value: number)) {
             return amountFormatted
         }
-        return "\(number)"
+        return String(format: "%.2f", number)
 }
 
 public func createAlert(on viewController: UIViewController, message: String) {
@@ -24,4 +26,16 @@ public func createAlert(on viewController: UIViewController, message: String) {
     
     alert.addAction(ok)
     viewController.present(alert, animated: true)
+}
+
+public func setupHideKeyboardOnTap(on viewController : UIViewController) {
+    let tapGesture = UITapGestureRecognizer(target: viewController, action: #selector(viewController.hideKeyboard))
+    tapGesture.cancelsTouchesInView = false // Allows other touches to pass through to the view
+    viewController.view.addGestureRecognizer(tapGesture)
+}
+    
+extension UIViewController {
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
 }

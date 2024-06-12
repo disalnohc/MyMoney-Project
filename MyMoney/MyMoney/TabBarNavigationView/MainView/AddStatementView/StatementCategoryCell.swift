@@ -16,4 +16,5 @@ class StatementCategoryCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var cellViewWidth: NSLayoutConstraint!
     @IBOutlet weak var cellViewHeight: NSLayoutConstraint!
+  
 }
