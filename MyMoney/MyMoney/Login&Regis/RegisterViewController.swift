@@ -21,9 +21,12 @@ class RegisterViewController : UIViewController {
     @IBOutlet weak var rgEmailField: UITextField!
     @IBOutlet weak var rgConfirmPasswordField: UITextField!
     @IBOutlet weak var rgPhoneField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHideKeyboardOnTap(on: self)
+        
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     class func initVC() -> RegisterViewController {
@@ -55,7 +58,8 @@ extension RegisterViewController {
             email: rgEmailInput,
             password: rgPasswordInput,
             username: rgUsernameInput,
-            phone: rgPhoneInput
+            phone: rgPhoneInput,
+            balance: "0"
         )
         
         let postData = try! JSONEncoder().encode(registerData)
@@ -70,7 +74,9 @@ extension RegisterViewController {
             let statusCode = (response as! HTTPURLResponse).statusCode
             if statusCode == 200 {
                 print("SUCCESS")
-                createAlert(on: self, message : "Create New Account!")
+                DispatchQueue.main.async {
+                    createAlert(on: self, message : "Create New Account!")
+                }
             } else {
                 print(statusCode)
             }
@@ -91,7 +97,15 @@ extension RegisterViewController {
         } else if (rgPasswordInput != rgConfirmPasswordInput) {
             createAlert(on: self, message: "Password and Confirm Password doesn't match.")
         } else {
-            requestRegister()
+            checkUsernameEmail(rgUsernameInput, rgEmailInput) { result in
+                if result == "Username and Email Are Avaliable." {
+                    self.requestRegister()
+                } else {
+                    DispatchQueue.main.async {
+                        createAlert(on: self, message: result)
+                    }
+                }
+            }
         }
     }
 

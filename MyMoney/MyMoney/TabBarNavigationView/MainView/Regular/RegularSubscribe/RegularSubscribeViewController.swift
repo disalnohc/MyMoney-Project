@@ -123,7 +123,7 @@ extension RegularSubscribeViewController : UICollectionViewDataSource {
         let regular = regularSubscribe[indexPath.row]
         
         rc.nameRegular.text = "Name : \(regular.name)"
-        rc.startRegular.text = "Start : \(regular.start)"
+        rc.startRegular.text = "Current : \(regular.currentPay)"
         rc.endRegular.text = "End : \(regular.end)"
         rc.viewBackground.layer.cornerRadius = 20
         rc.cycleRegular.text = "Cycle : \(regular.cycle)"

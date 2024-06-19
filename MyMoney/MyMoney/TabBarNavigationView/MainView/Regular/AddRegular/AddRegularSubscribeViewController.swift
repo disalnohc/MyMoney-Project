@@ -154,7 +154,8 @@ extension AddRegularSubscribeViewController {
             start: dateStart,
             end: endDate,
             cycle: cycle,
-            type: typeTextField.text ?? ""
+            type: typeTextField.text ?? "", 
+            currentPay: dateStart
         )
         
           print(regularData)

@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var statementCollection: UICollectionView!
     
     //view
@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var incomeAmount: UILabel!
     @IBOutlet weak var balanceAmount: UILabel!
     
+    var previousMonth : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         statementCollection.delegate = self
@@ -32,7 +34,7 @@ class MainViewController: UIViewController {
         statementCollection.reloadData()
         
         getDateRequest()
-                
+        
         historyView.layer.cornerRadius = 10
         calendarView.layer.cornerRadius = 10
         categoryView.layer.cornerRadius = 10
@@ -41,10 +43,15 @@ class MainViewController: UIViewController {
         
         userNameLabel.text = "Username : \(userName)"
         balanceAmount.text = String(demicalNumber(Double(userBalance) ?? 0.0))
-
         
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideCalendar))
-//            self.view.addGestureRecognizer(tapGestureRecognizer)
+        setupDateFormatter()
+        currentRegular()
+        
+        if let oneMonthAgoDate = Calendar.current.date(byAdding: .month, value: -1, to: Date()) {
+            previousMonth = yearMonthFormatter.string(from: oneMonthAgoDate)
+        }
+        //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideCalendar))
+        //            self.view.addGestureRecognizer(tapGestureRecognizer)
         
     }
     
@@ -111,14 +118,27 @@ extension MainViewController {
                     if let data = data {
                         if let decodedData = try? JSONDecoder().decode([dateHeader].self, from: data) {
                             monthYear = decodedData
+                            
+                            if let currentMonth = monthYear?.first(where: { $0.yearMonth == self.previousMonth }) {
+                                if let encodedData = try? JSONEncoder().encode(currentMonth) {
+                                    userDefaults.set(encodedData, forKey: "currentMonth")
+                                }
+                            } else {
+                                // กรณีไม่พบข้อมูล ให้ใส่ค่า income และ expenses เป็น 0.0
+                                let defaultMonth = dateHeader(yearMonth: self.previousMonth, income: 0.0, expenses: 0.0)
+                                if let encodedData = try? JSONEncoder().encode(defaultMonth) {
+                                    userDefaults.set(encodedData, forKey: "currentMonth")
+                                }
+                            }
+                            
                             DispatchQueue.main.async {
                                 self.incomeAmount.text = "\(String(demicalNumber(Double(monthYear?.first?.income ?? 0.0))))"
                                 self.expensesAmount.text = "\(String(demicalNumber(Double(monthYear?.first?.expenses ?? 0.0))))"
                             }
                             self.getStatementData()
-                            print("Decoded Date to monthYear success.")
+                            //print("Decoded Date to monthYear success.")
                         } else {
-                        print("Failed to decode JSON data.")
+                            print("Failed to decode JSON data.")
                         }
                     } else {
                         print("Response data is empty.")
@@ -154,9 +174,9 @@ extension MainViewController {
                                 if let decodedData = try? JSONDecoder().decode([Statement].self, from: data) {
                                     statementDataDictionary[i.yearMonth] = decodedData
                                     self.getCategoryData()
-                                    print("Decoded Statement to Dictionnary success.")
+                                    //print("Decoded Statement to Dictionnary success.")
                                 } else {
-                                print("Failed to decode JSON data.")
+                                    print("Failed to decode JSON data.")
                                 }
                             } else {
                                 print("Response data is empty.")
@@ -178,7 +198,7 @@ extension MainViewController {
             print("Invalid Url")
             return
         }
-            
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -197,12 +217,51 @@ extension MainViewController {
                                 return category.type == "income"}
                             expensesCategory = decode.filter { category in
                                 return category.type == "expenses"}
-//                            print("income : \(incomeCategory)")
-//                            print("expense : \(expensesCategory)")
+                            //                            print("income : \(incomeCategory)")
+                            //                            print("expense : \(expensesCategory)")
                             DispatchQueue.main.async {
                                 self.statementCollection.reloadData()
                             }
-                            print("Decode Category Success.")
+                            //print("Decode Category Success.")
+                        } else {
+                            print("Failed to decode Category JSON data.")
+                        }
+                    } else {
+                        print("Response data is empty.")
+                    }
+                } else {
+                    print("Received non-200 status code: \(statusCode.statusCode)")
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func currentRegular() {
+        guard let url = URL(string: "\(ipURL)/regular-currentPay/\(userName)") else {
+            print("Invalid Url")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: url) { data , response , error in
+            if let error = error {
+                print("Error : \(error)")
+            }
+            
+            if let statusCode = response as? HTTPURLResponse {
+                if statusCode.statusCode == 200 {
+                    if let data = data {
+                        if let decode = try? JSONDecoder().decode([RegularNextPay].self, from: data) {
+                            let filter = decode.filter { $0.pay == "Yes"}
+                            if let encodedData = try? JSONEncoder().encode(filter) {
+                                UserDefaults.standard.set(encodedData, forKey: "regularNoti")
+                            } else {
+                                print("Failed to encode regularNoti.")
+                            }
                         } else {
                             print("Failed to decode Category JSON data.")
                         }
@@ -224,29 +283,29 @@ extension MainViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let sd = collectionView.dequeueReusableCell(withReuseIdentifier: "StatementDateCell", for: indexPath) as! StatementDateCell
+        let sd = collectionView.dequeueReusableCell(withReuseIdentifier: "StatementDateCell", for: indexPath) as! StatementDateCell
         
         if let monthYear = monthYear {
             sd.stateDate.text = monthYear[indexPath.row].yearMonth
             let income = String(format: "%.2f", monthYear[indexPath.row].income)
             let expenses = String(format: "%.2f", monthYear[indexPath.row].expenses)
-            sd.stateStatement.text = "Income: \(income) , Expenses: \(expenses)"
+            sd.stateStatement.text = "Income: \(demicalNumber(Double(income) ?? 0)) , Expenses: \(demicalNumber(Double(expenses) ?? 0))"
             sd.statementData = statementDataDictionary[monthYear[indexPath.row].yearMonth]
             sd.listStatementCollection.reloadData()
         }
         sd.dateView.clipsToBounds = true
         sd.dateView.layer.cornerRadius = 10
         sd.dateView.layer.maskedCorners = [.layerMinXMinYCorner , .layerMaxXMinYCorner]
-            sd.listStatementCollection.dataSource = sd
-            
-            return sd
+        sd.listStatementCollection.dataSource = sd
+        
+        return sd
     }
-
+    
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.width 
+        let cellWidth = collectionView.frame.width
         let cellHeight: CGFloat = 85
         
         if let monthYear = monthYear, let statementData = statementDataDictionary[monthYear[indexPath.row].yearMonth], !statementData.isEmpty {

@@ -65,8 +65,10 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource {
         }
         
         if amount > 0.0 {
+            return "+\(demicalNumber(amount))"
+        } else if amount < 0.0 {
             return demicalNumber(amount)
-            } else {
+        } else {
                 return nil
             }
         }

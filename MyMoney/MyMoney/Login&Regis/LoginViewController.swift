@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
 
     var emailInput : String = ""
     var passwordInput : String = ""
-
+    
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -24,14 +24,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupHideKeyboardOnTap(on: self)
-        
         loadingIndicator.hidesWhenStopped = true
-        
+        checkPermission()
         loadingBGView = UIView(frame: view.bounds)
         loadingBGView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         loadingBGView.isHidden = true
                 view.addSubview(loadingBGView)
                 view.bringSubviewToFront(loadingIndicator)
+        
+        checkUserLogin()
     }
 
     class func initVC() -> LoginViewController {
@@ -59,6 +60,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgetPasswordTap(_ sender: UIButton) {
+        navigationController?.pushViewController(ForgetPassViewController.initVC(), animated: true)
+    }
+    
+    @IBAction func registerTap(_ sender: UIButton) {
         navigationController?.pushViewController(RegisterViewController.initVC(), animated: true)
     }
 }
@@ -101,7 +106,10 @@ extension LoginViewController {
                     }
                 } else {
                     // Fail
-                    print("Received non-200 status code: \(statuscode.statusCode)")
+                    DispatchQueue.main.async {
+                        self.hideLoadingIndicator()
+                        createAlert(on: self, message: "Email or Password not Correct.")
+                    }
                 }
             }
         }
@@ -113,6 +121,12 @@ extension LoginViewController {
         
         if(email == emailInput && password == passwordInput) {
             //print("LoginSuccess")
+            
+            // UserDefaults Storage
+            userDefaults.set(emailInput, forKey: "email")
+            userDefaults.set(passwordInput, forKey: "password")
+            
+            
                 DispatchQueue.main.async {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
@@ -122,9 +136,31 @@ extension LoginViewController {
                     self.navigationController?.present(tabBarController, animated: true)
                 }
         } else {
-            print("Password not correct")
+            DispatchQueue.main.async {
+                createAlert(on: self, message: "Email or Password not Correct.")
+            }
         }
-        
     }
     
+    func ClearOldUser() {
+        monthYear = []
+        statementDataDictionary = [:] // keep data fetching
+
+        incomeCategory = []
+        expensesCategory = []
+
+        summarizeIncomeCategory = []
+        summarizeExpensesCategory = []
+
+        regularSubscribe = []
+    }
+    
+    func checkUserLogin() {
+        if userDefaults.string(forKey: "email") != nil && userDefaults.string(forKey: "password") != nil {
+//            print("have user")
+            emailInput = userDefaults.string(forKey: "email") ?? ""
+            passwordInput = userDefaults.string(forKey: "password") ?? ""
+            requestLogin()
+        }
+    }
 }

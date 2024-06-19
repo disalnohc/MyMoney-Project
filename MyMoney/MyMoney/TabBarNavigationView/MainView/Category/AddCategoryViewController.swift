@@ -31,8 +31,10 @@ class AddCategoryViewController: UIViewController, UIPickerViewDataSource , UIPi
         bgDetails.layer.cornerRadius = 10
         tappedImages()
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+         navigationController?.navigationBar.shadowImage = UIImage()
+        
         //color
-        colorWells.addTarget(self, action: #selector(colorChanged), for: .valueChanged)
         
         let picker = UIPickerView()
             picker.dataSource = self
@@ -114,7 +116,7 @@ extension AddCategoryViewController {
         let categoryData = CategoryData(
             username: "\(userName)",
             name: nameTextField.text ?? "",
-            bgcolor: hexColor,
+            bgcolor: "FFF000",
             type: selectedOption.lowercased(),
             image: nil)
         
@@ -186,11 +188,16 @@ extension AddCategoryViewController {
             
             if let statusCode = response as? HTTPURLResponse {
                 if statusCode.statusCode == 200 {
-                    print("Success")
                     if self.selectedOption.lowercased() == "income" {
-                        incomeCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "income", image: imageData))
+                        DispatchQueue.main.async {
+                            incomeCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "income", image: imageData))
+                            createAlert(on: self, message: "Add new Category Success.")
+                        }
                     } else {
-                        expensesCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "expenses", image: imageData))
+                        DispatchQueue.main.async {
+                            expensesCategory.append(CategoryData(username: userName, name: self.nameTextField.text ?? "", bgcolor: self.hexColor, type: "expenses", image: imageData))
+                            createAlert(on: self, message: "Add new Category Success.")
+                        }
                     }
                 } else {
                     print("Failed : \(statusCode.statusCode)")
